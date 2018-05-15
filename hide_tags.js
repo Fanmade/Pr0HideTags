@@ -4,7 +4,7 @@
 // @namespace    selektion
 // @include      http://pr0gramm.com/*
 // @include      https://pr0gramm.com/*
-// @version      0.1.1
+// @version      0.1.2
 // @description  Versteckt die Tags um Spoiler zu vermeiden
 // @match        https://pr0gramm.com/*
 // @icon         http://pr0gramm.com/media/pr0gramm-favicon.png
