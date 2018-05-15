@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         Tags verstecken
+// @version      0.1.4
+// @description  Versteckt die Tags um Spoiler zu vermeiden
 // @author       Selektion
 // @namespace    selektion
+// @license      GPL-3.0; http://www.gnu.org/licenses/gpl-3.0.txt
 // @include      http://pr0gramm.com/*
 // @include      https://pr0gramm.com/*
-// @version      0.1.3
-// @description  Versteckt die Tags um Spoiler zu vermeiden
 // @match        https://pr0gramm.com/*
 // @icon         http://pr0gramm.com/media/pr0gramm-favicon.png
 // @updateURL    https://raw.githubusercontent.com/Fanmade/Pr0HideTags/master/hide_tags.js
