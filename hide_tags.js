@@ -8,8 +8,8 @@
 // @description  Versteckt die Tags um Spoiler zu vermeiden
 // @match        https://pr0gramm.com/*
 // @icon		 http://pr0gramm.com/media/pr0gramm-favicon.png
-// @updateURL    https://gist.githubusercontent.com/Fanmade/00c8c5907a16986e5dee8db600ccb2f8/raw/71db6bedee717a5f90ef2dd10ac4ce9e2e85c15a/hide_tags.js
-// @downloadURL  https://gist.githubusercontent.com/Fanmade/00c8c5907a16986e5dee8db600ccb2f8/raw/71db6bedee717a5f90ef2dd10ac4ce9e2e85c15a/hide_tags.js
+// @updateURL    https://raw.githubusercontent.com/Fanmade/Pr0HideTags/master/hide_tags.js
+// @downloadURL  https://raw.githubusercontent.com/Fanmade/Pr0HideTags/master/hide_tags.js
 // @require      https://gist.github.com/raw/2625891/waitForKeyElements.js
 // @grant        GM_addStyle
 // ==/UserScript==
