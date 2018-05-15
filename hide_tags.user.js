@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Tags verstecken
-// @version      0.1.4
+// @version      0.2.0
 // @description  Versteckt die Tags um Spoiler zu vermeiden
 // @author       Selektion
 // @namespace    selektion
@@ -20,20 +20,19 @@
     function sel_tags_init($tagContainer) {
         const style = document.createElement("style");
         style.type = "text/css";
-        style.innerHTML = '.tags .spoiler{content:" ";bottom:1.4em;width:100%;display:block;background-color:rgba(22,22,24,0.96);z-index:11;position:absolute;top:0;left:0;}div.tags{position:relative;}.tag-toggle{padding-left:4px;white-space:nowrap;}';
+        style.innerHTML = 'span.tag{opacity:0.1;}a.tag-link{color:#f5f7f609;}.tags.show a.tag-link{color:#f5f7f6;}.tags.show span.tag{opacity:1;}';
         document.head.appendChild(style);
-        $tagContainer.append('<div class="spoiler"> </div><a class="tag-toggle action">Tags anzeigen</a>');
+        $tagContainer.append('<a class="tag-toggle action">Tags anzeigen</a>');
+        let $tagToggle = $('.tag-toggle');
+        let $tags = $('.tags');
         $tagContainer.on('click', '.tag-toggle', function(spoiler) {
-            let $spoiler = $('.spoiler');
-            let $tagToggle = $('.tag-toggle');
-            if('block' === $spoiler.css('display')) {
-                $spoiler.css('display', 'none');
-                $tagToggle.text('Tags verbergen');
-            } else {
-                $spoiler.css('display', 'block');
+            if($tags.hasClass('show')) {
+                $tags.removeClass('show');
                 $tagToggle.text('Tags anzeigen');
+            } else {
+                $tags.addClass('show');
+                $tagToggle.text('Tags verbergen');
             }
         });
     }
-
 })();
