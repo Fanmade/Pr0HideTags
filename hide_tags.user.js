@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Tags verstecken
-// @version      0.2.0
+// @version      0.2.1
 // @description  Versteckt die Tags um Spoiler zu vermeiden
 // @author       Selektion
 // @namespace    selektion
@@ -20,7 +20,7 @@
     function sel_tags_init($tagContainer) {
         const style = document.createElement("style");
         style.type = "text/css";
-        style.innerHTML = 'span.tag{opacity:0.1;}a.tag-link{color:#f5f7f609;}.tags.show a.tag-link{color:#f5f7f6;}.tags.show span.tag{opacity:1;}';
+        style.innerHTML = 'span.tag{opacity:0.1;}a.tag-link{color:#f5f7f609;}.tags.show a.tag-link{color:#f5f7f6;}.tags.show span.tag{opacity:1;}.tag-toggle{white-space:nowrap;}';
         document.head.appendChild(style);
         $tagContainer.append('<a class="tag-toggle action">Tags anzeigen</a>');
         let $tagToggle = $('.tag-toggle');
