@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Tags verstecken
-// @version      0.8.8
+// @version      0.8.9
 // @description  Versteckt die Tags um Spoiler zu vermeiden
 // @author       Selektion
 // @namespace    selektion
@@ -67,7 +67,7 @@
                     $.each(data.tags, function(key,item) {
                         if (undefined != item.tag && undefined != item.confidence) {
                             searchTags.forEach(function(searchTag) {
-                                if (item.tag.toLowerCase().indexOf(searchTag) >= 0 && item.confidence >= 0.2) {
+                                if (item.tag.toLowerCase().indexOf(searchTag) >= 0 && item.confidence >= 0.2 && '"' + searchTag + '"' !== item.tag.toLowerCase()) {
                                     result = true;
                                     return true;
                                 }
