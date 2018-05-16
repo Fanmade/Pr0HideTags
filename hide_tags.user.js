@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Tags verstecken
-// @version      0.8.5
+// @version      0.8.6
 // @description  Versteckt die Tags um Spoiler zu vermeiden
 // @author       Selektion
 // @namespace    selektion
@@ -61,7 +61,7 @@
         let result = false;
         if(0 < id.length) {
             id = parseInt(id[1]);
-            $.get( "http://pr0gramm.com/api/items/info?itemId=" + id, function( data ) {
+            $.get(location.protocol + "//pr0gramm.com/api/items/info?itemId=" + id, function( data ) {
                 if (undefined != data.tags) {
                     $.each(data.tags, function(key,item) {
                         if (undefined != item.tag && undefined != item.confidence) {
