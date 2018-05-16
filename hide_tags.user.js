@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Tags verstecken
-// @version      0.8.7
+// @version      0.8.8
 // @description  Versteckt die Tags um Spoiler zu vermeiden
 // @author       Selektion
 // @namespace    selektion
@@ -81,6 +81,7 @@
                 }
             });
         } else {
+            callback.call();
             return false;
         }
     }
