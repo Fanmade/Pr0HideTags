@@ -9,8 +9,7 @@
 // @include      https://pr0gramm.com/*
 // @match        https://pr0gramm.com/*
 // @icon         http://pr0gramm.com/media/pr0gramm-favicon.png
-// @updateURL    https://raw.githubusercontent.com/Fanmade/Pr0HideTags/master/hide_tags.js
-// @downloadURL  https://raw.githubusercontent.com/Fanmade/Pr0HideTags/master/hide_tags.js
+// @downloadURL  https://raw.githubusercontent.com/Fanmade/Pr0HideTags/master/hide_tags.user.js
 // @require      https://gist.github.com/raw/2625891/waitForKeyElements.js
 // @grant        GM_addStyle
 // ==/UserScript==
