@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Tags verstecken
-// @version      0.8.0
+// @version      0.8.5
 // @description  Versteckt die Tags um Spoiler zu vermeiden
 // @author       Selektion
 // @namespace    selektion
@@ -17,7 +17,7 @@
 
 (function() {
     const selDefaultSetting = 1;
-    const selTagSettings = ["Nie","Immer","Nur bei Videos","Nur bei \"gegen Spoiler\" in den Tags"];
+    const selTagSettings = ["Nie","Immer","Nur bei Videos","Nur bei \"gegen Spoiler\" oder \"unerwartet\" in den Tags"];
     waitForKeyElements (".tags", selTagsInit);
     function selBuildMenu(selectedSetting, returnHtml) {
         let tagMenu = '<div class="sel-tag-menu"><a class="sel-close">x</a><h4>Tags verbergen:</h4>';
@@ -57,7 +57,7 @@
         $tags.removeClass('show');
         $tagToggle.text('Tags anzeigen');
     };
-    function hasTag(searchTag, callback) {
+    function hasTag(searchTags, callback) {
         let id = window.location.href.match(/[new/|top/]([0-9]{3,})/);
         let result = false;
         if(0 < id.length) {
@@ -65,17 +65,19 @@
             $.get( "http://pr0gramm.com/api/items/info?itemId=" + id, function( data ) {
                 if (undefined != data.tags) {
                     $.each(data.tags, function(key,item) {
-                        if (undefined != item.tag) {
-                            if (item.tag.toLowerCase().indexOf(searchTag) >= 0) {
-                                result = true;
-                                return true;
-                            }
+                        if (undefined != item.tag && undefined != item.confidence) {
+                            searchTags.forEach(function(searchTag) {
+                                if (item.tag.toLowerCase().indexOf(searchTag) >= 0 && item.confidence >= 0.2) {
+                                    result = true;
+                                    return true;
+                                }
+                            });
                         }
                     });
                     if (!result) {
                         callback.call();
                     }
-                    return false;
+                    return result;
                 }
             });
         } else {
@@ -98,11 +100,11 @@
                 break;
             case 2: // only videos
                 hideTags();
-                hasTag('webm', showTags);
+                hasTag(['webm'], showTags);
                 break;
             case 3: // only spoilers
                 hideTags();
-                hasTag('gegen spoiler', showTags);
+                hasTag(['gegen spoiler', 'unerwartet'], showTags);
                 break;
         }
         const $menu = $('.sel-tag-menu');
