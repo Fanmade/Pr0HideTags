@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Tags verstecken
-// @version      0.8.6
+// @version      0.8.7
 // @description  Versteckt die Tags um Spoiler zu vermeiden
 // @author       Selektion
 // @namespace    selektion
@@ -10,6 +10,7 @@
 // @match        https://pr0gramm.com/*
 // @icon         http://pr0gramm.com/media/pr0gramm-favicon.png
 // @downloadURL  https://raw.githubusercontent.com/Fanmade/Pr0HideTags/master/hide_tags.user.js
+// @updateURL    https://raw.githubusercontent.com/Fanmade/Pr0HideTags/master/hide_tags.user.js
 // @require      https://gist.github.com/raw/2625891/waitForKeyElements.js
 // @grant        GM_addStyle
 // ==/UserScript==
